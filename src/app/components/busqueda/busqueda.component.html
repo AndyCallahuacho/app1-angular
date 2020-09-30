@@ -1,0 +1,21 @@
+<h1 class="animated fadeIn fast">Buscador <small>{{termino}}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">No se encontro:
+                <h3>{{termino}}</h3>
+            </h4>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card-columns">
+    <!-- <app-busqueda-tarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index">
+    </app-busqueda-tarjeta> -->
+    <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes;">
+    </app-heroe-tarjeta>
+</div>
