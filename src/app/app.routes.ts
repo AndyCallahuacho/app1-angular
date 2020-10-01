@@ -10,7 +10,7 @@
 
 
 
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
@@ -25,8 +25,8 @@ const APP_ROUTES: Routes = [
     { path: 'heroes', component: HeroesComponent},
     { path: 'heroe/:id', component: HeroeComponent},
     { path: 'busqueda/:nombre', component: BusquedaComponent} ,
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: '**', component: HomeComponent }
+    { path: '', component: HomeComponent , pathMatch: 'full' },
+    { path: '**', redirectTo: '/home'}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
